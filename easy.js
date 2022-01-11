@@ -34,8 +34,6 @@ const { exit } = require("process")
 const altNumbers = (numArray) => {
 
     // TODO: COMPLETE THIS FUNCTION
-
-    // Sort numArray into positive array and negative array
     let positive_array = []
     let negative_array = []
 
@@ -48,29 +46,22 @@ const altNumbers = (numArray) => {
     }
 
     if (numArray.length == 0) {
-        // Empty array
         return [];
     } else if (numArray.length % 2 == 1) {
         let answer_array = []
-        
-        // One solution
         if (positive_array.length > negative_array.length) {
-            // Start with positive
             for (let i = 0; i < negative_array.length; i++) {
                 answer_array.push(positive_array[i])
                 answer_array.push(negative_array[i])
             }
-            // Add last element
             answer_array.push(positive_array[positive_array.length - 1])
             return answer_array
 
         } else {
-            // Start with negative
             for (let i = 0; i < positive_array.length; i++) {
                 answer_array.push(negative_array[i])
                 answer_array.push(positive_array[i])
             }
-             // Add last element
              answer_array.push(negative_array[negative_array.length - 1])
              return answer_array
 
@@ -78,8 +69,6 @@ const altNumbers = (numArray) => {
 
     } else {
         let answer_array = []
-        // Two solutions
-        // Code is hardwired to return array which starts with positive
         for (let i = 0; i < negative_array.length; i++) {
             answer_array.push(positive_array[i])
             answer_array.push(negative_array[i])
